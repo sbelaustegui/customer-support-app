@@ -12,3 +12,5 @@ spring:
     url: jdbc:postgresql://localhost:5432/exercise1
     username: postgres
     password: password
+
+initdb: true
