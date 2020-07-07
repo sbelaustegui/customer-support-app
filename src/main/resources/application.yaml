@@ -1,0 +1,14 @@
+spring:
+  jpa:
+    database: POSTGRESQL
+    generate-ddl: true
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/exercise1
+    username: postgres
+    password: password
