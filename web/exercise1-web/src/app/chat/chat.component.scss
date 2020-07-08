@@ -1,0 +1,19 @@
+:host {
+  height: 100%;
+  .chat-container {
+    .messages {
+      text-align: left;
+      min-height: 300px;
+      max-height: 50vh;
+      overflow-y: scroll;
+    }
+
+    .input {
+      width: 100%;
+
+      .icon {
+        cursor: pointer;
+      }
+    }
+  }
+}

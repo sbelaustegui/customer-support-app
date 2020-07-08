@@ -1,0 +1,15 @@
+<div class="chat-container">
+  <div class="messages" #chatContainer>
+    <p *ngIf="!support.allBusy"><strong>Soporte:</strong> {{support.message}}</p>
+    <p *ngFor="let msg of messages"><strong>Usted:</strong> {{msg}}</p>
+    <p *ngIf="support.allBusy">{{allBusyMessage}}</p>
+  </div>
+
+  <form *ngIf="!support.allBusy" autocomplete="off">
+    <mat-form-field class="input">
+      <mat-label>Mensaje</mat-label>
+      <input type="text" matInput placeholder="Ingrese su mensaje..." [(ngModel)]="message" [ngModelOptions]="{standalone: true}" (keydown.enter)="sendMessage()">
+      <mat-icon class="icon" matSuffix (click)="sendMessage()">send</mat-icon>
+    </mat-form-field>
+  </form>
+</div>

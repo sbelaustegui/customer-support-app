@@ -4,9 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import resolvit.challenges.exercise1.exception.NotFoundException;
 import resolvit.challenges.exercise1.model.Employee;
+import resolvit.challenges.exercise1.payload.SupportResponse;
 import resolvit.challenges.exercise1.service.EmployeeService;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author Sebastian Belaustegui
@@ -28,7 +30,9 @@ public class EmployeeController {
     }
 
     @GetMapping("/support")
-    public String getSupport() {
-        return employeeService.findFirstNotBusy().orElseThrow(() -> new NotFoundException("All busy!"));
+    public SupportResponse getSupport() {
+        return employeeService.findFirstNotBusy()
+                .map(msg -> new SupportResponse(msg, false))
+                .orElseGet(() -> new SupportResponse("All busy!", true));
     }
 }
