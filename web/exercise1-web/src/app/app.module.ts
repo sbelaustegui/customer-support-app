@@ -13,7 +13,9 @@ import { ChatComponent } from './chat/chat.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {HttpClientModule} from "@angular/common/http";
 import {MatInputModule} from '@angular/material/input';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { ConfDialogComponent } from './conf-dialog/conf-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import {FormsModule} from "@angular/forms";
     NavbarComponent,
     HomeComponent,
     ChatComponent,
+    ConfDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,9 @@ import {FormsModule} from "@angular/forms";
     MatCardModule,
     MatSnackBarModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

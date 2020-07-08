@@ -1,0 +1,16 @@
+<div>
+  <h1 mat-dialog-title>Configuración</h1>
+  <div mat-dialog-content>
+    <p>Cantidad de empleados disponibles</p>
+    <form autocomplete="off" [formGroup]="employeesQuantities">
+      <mat-form-field *ngFor="let control of getKeys(employeesObject)">
+        <mat-label>{{control}}</mat-label>
+        <input matInput type="number" [formControlName]="control" required>
+      </mat-form-field>
+    </form>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancelar</button>
+    <button mat-button cdkFocusInitial type="submit" [disabled]="!employeesQuantities.valid" (click)="save()">Guardar</button>
+  </div>
+</div>

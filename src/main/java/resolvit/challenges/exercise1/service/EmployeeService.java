@@ -36,4 +36,14 @@ public class EmployeeService {
     public Employee saveEmployee(Employee employee){
         return employeeRepository.save(employee);
     }
+
+    public Optional<Employee> updateEmployeeQuantity(String type, int quantity) {
+        Optional<Employee> optionalEmployee = employeeRepository.findByType(type);
+        if (optionalEmployee.isPresent()) {
+            Employee employee = optionalEmployee.get();
+            employee.setQuantity(quantity);
+            return Optional.of(saveEmployee(employee));
+        }
+        return Optional.empty();
+    }
 }

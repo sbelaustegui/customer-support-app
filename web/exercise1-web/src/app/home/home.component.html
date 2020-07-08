@@ -1,12 +1,22 @@
 <mat-card class="home-container">
-  <mat-card-header>
-    <mat-card-title>Atención al cliente</mat-card-title>
+
+  <mat-card-header class="header">
+    <mat-card-title *ngIf="!support">
+      <button mat-mini-fab color="secondary" aria-label="Configuration" (click)="handleConfig()">
+        <mat-icon>build</mat-icon>
+      </button>
+    </mat-card-title>
   </mat-card-header>
+
   <mat-card-content class="content">
+    <h2>Atención al cliente</h2>
+    <p *ngIf="!support" class="welcome-msg">¡Bienvenido! Haga click sobre 'Comenzar' para comunicarse con uno de nuestro representantes.</p>
     <app-chat *ngIf="support" [support]="support"></app-chat>
   </mat-card-content>
+
   <mat-card-actions>
-    <button *ngIf="!support" mat-raised-button color="primary" (click)="getSupport()">Empezar</button>
+    <button *ngIf="!support" mat-raised-button color="primary" (click)="getSupport()">Comenzar</button>
     <button *ngIf="support" mat-raised-button color="warn" (click)="back()">Volver</button>
   </mat-card-actions>
+
 </mat-card>

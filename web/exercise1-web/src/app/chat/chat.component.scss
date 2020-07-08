@@ -1,11 +1,17 @@
 :host {
   height: 100%;
   .chat-container {
+    padding-top: 30px;
+
     .messages {
       text-align: left;
       min-height: 300px;
-      max-height: 50vh;
+      max-height: 40vh;
       overflow-y: scroll;
+
+      @media screen and (max-width: 768px){
+        height: 55vh;
+      }
     }
 
     .input {

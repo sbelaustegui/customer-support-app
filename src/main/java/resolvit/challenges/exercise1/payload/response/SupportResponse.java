@@ -1,4 +1,4 @@
-package resolvit.challenges.exercise1.payload;
+package resolvit.challenges.exercise1.payload.response;
 
 public class SupportResponse {
 
