@@ -10,6 +10,8 @@ import java.util.Optional;
 @Repository
 public interface EmployeeRepository extends CrudRepository<Employee, Integer> {
 
+    void deleteAll();
+
     List<Employee> findAll();
     Optional<Employee> findById(Integer id);
 
